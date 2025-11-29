@@ -1,0 +1,23 @@
+server:
+  port: 1010
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/real_estate
+    username: real_estate
+    password: 123
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    database: postgresql
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    com.realestate: DEBUG
