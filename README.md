@@ -33,3 +33,9 @@ This project is a real-time real-estate platform where users can:
 - Configured dependencies
 - Initialized Git repo
 - Set up base branches
+
+## Day 2 Progress
+- Project structure
+- Technologies (Spring Boot, Spring Security, OAuth2, WebSockets)
+- Branching strategy (main + develop + feature/*)
+
