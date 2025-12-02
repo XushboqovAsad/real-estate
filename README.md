@@ -39,3 +39,9 @@ This project is a real-time real-estate platform where users can:
 - Technologies (Spring Boot, Spring Security, OAuth2, WebSockets)
 - Branching strategy (main + develop + feature/*)
 
+## Day 3 — Registration, Login, JWT
+- User register API
+- User login API
+- JWT generation & validation
+- Custom Authentication Provider
+
