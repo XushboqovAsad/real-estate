@@ -4,6 +4,7 @@ import lombok.Builder;
 import lombok.Data;
 
 import java.security.AuthProvider;
+import java.util.Set;
 import java.util.UUID;
 
 @Data
@@ -13,7 +14,7 @@ public class UserDto {
     private String fullName;
     private String email;
     private String avatarUrl;
-    private String role;
+    private Set<String> roles;
     private String authProvider;
 
 }

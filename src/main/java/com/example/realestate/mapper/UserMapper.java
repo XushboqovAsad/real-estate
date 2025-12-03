@@ -3,6 +3,8 @@ package com.example.realestate.mapper;
 import com.example.realestate.dto.UserDto;
 import com.example.realestate.entity.User;
 
+import java.util.stream.Collectors;
+
 public class UserMapper {
 
     public static UserDto toDto(User user) {
@@ -12,8 +14,12 @@ public class UserMapper {
                 .fullName(user.getFullName())
                 .email(user.getEmail())
                 .avatarUrl(user.getAvatarUrl())
-                .role(user.getRole().name())
                 .authProvider(user.getAuthProvider().name())
+                .roles(user.getRoles()
+                                .stream()
+                                .map(roleEntity -> roleEntity.getName().name())
+                                .collect(Collectors.toSet())
+                )
                 .build();
     }
     public static User toEntity(UserDto dto) {
