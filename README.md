@@ -45,3 +45,14 @@ This project is a real-time real-estate platform where users can:
 - JWT generation & validation
 - Custom Authentication Provider
 
+## Day 4 — Google OAuth2 Login Integration
+- Implemented Google OAuth2 login
+- Added CustomOAuth2UserService to fetch user info from Google
+- Created OAuth2LoginSuccessHandler for automatic user creation
+- Updated User entity (added roles, avatarUrl, authProvider)
+- Migrated from enum Role to RoleEntity (ManyToMany relationship)
+- Updated SecurityConfig to support OAuth2 login flow
+- Added default role assignment (USER) on first login
+- Updated UserMapper (mapping RoleEntity set instead of enum)
+
+
