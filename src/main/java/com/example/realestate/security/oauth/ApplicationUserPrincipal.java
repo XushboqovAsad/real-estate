@@ -6,13 +6,22 @@ import org.springframework.security.oauth2.core.user.OAuth2User;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
-public class CustomOAuth2User implements OAuth2User {
+public class ApplicationUserPrincipal implements OAuth2User {
 
+    private final UUID id;
     private final OAuth2User oAuth2User;
+    private final Collection<? extends GrantedAuthority> authorities;
 
-    public CustomOAuth2User(OAuth2User oAuth2User) {
+    public ApplicationUserPrincipal(UUID id, OAuth2User oAuth2User, Collection<? extends GrantedAuthority> authorities) {
+        this.id = id;
         this.oAuth2User = oAuth2User;
+        this.authorities = authorities;
+    }
+
+    public UUID getId() {
+        return id;
     }
 
     @Override
@@ -22,20 +31,11 @@ public class CustomOAuth2User implements OAuth2User {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of();
+        return authorities;
     }
 
     @Override
     public String getName() {
-        return oAuth2User.getAttribute("name");
-    }
-
-    public String getEmail() {
-        return oAuth2User.getAttribute("email");
-    }
-
-    public String getPicture() {
-        return oAuth2User.getAttribute("picture");
+        return (String) oAuth2User.getAttribute("name");
     }
 }
-
