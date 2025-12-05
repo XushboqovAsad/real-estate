@@ -55,4 +55,13 @@ This project is a real-time real-estate platform where users can:
 - Added default role assignment (USER) on first login
 - Updated UserMapper (mapping RoleEntity set instead of enum)
 
+## Day 5 — Property Listing Module
+- Created Property entity
+- Added enums (PropertyType, HouseCategory)
+- Implemented User → Property relationship
+- Added PropertyDto + PropertyMapper
+- Implemented PropertyService (CRUD)
+- Implemented PropertyController
+- Added Controller-level logging
+- Added validation and structured domain layer
 
